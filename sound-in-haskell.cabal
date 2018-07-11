@@ -1,0 +1,64 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 047513010a95e61c13b869d9ecff43888cd32f25375b183e3cbe1996a600c444
+
+name:           sound-in-haskell
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/sound-in-haskell#readme>
+homepage:       https://github.com/githubuser/sound-in-haskell#readme
+bug-reports:    https://github.com/githubuser/sound-in-haskell/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/sound-in-haskell
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_sound_in_haskell
+  default-language: Haskell2010
+
+executable soh
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , proteaaudio
+    , sound-in-haskell
+  other-modules:
+      Paths_sound_in_haskell
+  default-language: Haskell2010
+
+test-suite sound-in-haskell-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , sound-in-haskell
+  other-modules:
+      Paths_sound_in_haskell
+  default-language: Haskell2010
